@@ -130,6 +130,12 @@ on property:vendor.post_boot.parsed=1
     # Allow GPU to nap
     write /sys/class/kgsl/kgsl-3d0/force_no_nap 0
 
+on property:init.svc.cnss_diag=running
+    stop cnss_diag
+
+on property:init.svc.vendor.ipacm-diag=running
+    stop vendor.ipacm-diag
+
 on property:init.svc.face_hal=restarting
     stop face_hal
 
