@@ -62,7 +62,7 @@ Light::Light() {
 void Light::handleBacklight(const LightState& state) {
     int maxBrightness = get("/sys/class/backlight/panel0-backlight/max_brightness", 4095);
     int sentBrightness = rgbToBrightness(state);
-    int brightness = sentBrightness * maxBrightness / 255;
+    int brightness = (sentBrightness - 1) * (maxBrightness - 1) / (0xFF - 1) + 1;
     LOG(DEBUG) << "Writing backlight brightness " << brightness
                << " (orig " << sentBrightness << ")";
     set("/sys/class/backlight/panel0-backlight/brightness", brightness);
