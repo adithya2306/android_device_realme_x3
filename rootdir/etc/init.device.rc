@@ -44,18 +44,10 @@ on fs
     mount ext4 /dev/block/mapper/oppo_product /mnt/vendor/oppo_product ro
 
 on post-fs
-    mount none /system/bin/hw/android.hardware.power@1.2-service /vendor/bin/hw/android.hardware.power@1.2-service bind
-    mount none /system/etc/fstab.qcom /vendor/etc/fstab.qcom bind
-    mount none /system/etc/msm_irqbalance.conf /vendor/etc/msm_irqbalance.conf bind
     mount none /oppo_product/etc/audio_policy_configuration.xml /vendor/etc/audio_policy_configuration.xml bind
     mount none /oppo_product/etc/audio_policy_volumes.xml /vendor/etc/audio_policy_volumes.xml bind
     mount none /oppo_product/etc/default_volume_tables.xml /vendor/etc/default_volume_tables.xml bind
     mount none /vendor/lost+found /vendor/overlay bind
-
-    mount none /dev/null /vendor/lib/hw/lights.msmnile.so bind
-    mount none /dev/null /vendor/lib/hw/android.hardware.light@2.0-impl.so bind
-    mount none /dev/null /vendor/lib64/hw/lights.msmnile.so bind
-    mount none /dev/null /vendor/lib64/hw/android.hardware.light@2.0-impl.so bind
 
 on property:sys.boot_completed=1
     # Reset schedtune globally
