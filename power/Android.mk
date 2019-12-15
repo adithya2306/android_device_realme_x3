@@ -39,6 +39,15 @@ LOCAL_MODULE := android.hardware.power-service.x3
 LOCAL_MODULE_STEM := android.hardware.power-service
 LOCAL_MODULE_PATH := $(TARGET_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/bin
 LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_REQUIRED_MODULES := android.hardware.power-service.rc
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_EXECUTABLE)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.hardware.power-service.rc
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/init
+LOCAL_SRC_FILES := android.hardware.power-service.rc
+include $(BUILD_PREBUILT)
