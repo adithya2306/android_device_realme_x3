@@ -100,6 +100,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     telephony-ext
 
+# Vulkan
+PRODUCT_COPY_FILES += \
+     frameworks/native/data/etc/android.software.vulkan.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.software.vulkan.deqp.level.xml
+
 # WiFi Display
 PRODUCT_BOOT_JARS += \
     WfdCommon
