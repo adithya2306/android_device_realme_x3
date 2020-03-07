@@ -7,3 +7,8 @@ on post-fs
     mount none /system/etc/msm_irqbalance.conf /vendor/etc/msm_irqbalance.conf bind
     mount none /vendor/etc/audio/audio_policy_configuration.xml /vendor/etc/audio_policy_configuration.xml bind
     mount none /vendor/lost+found /vendor/overlay bind
+
+    mount none /dev/null /vendor/lib/hw/lights.msmnile.so bind
+    mount none /dev/null /vendor/lib/hw/android.hardware.light@2.0-impl.so bind
+    mount none /dev/null /vendor/lib64/hw/lights.msmnile.so bind
+    mount none /dev/null /vendor/lib64/hw/android.hardware.light@2.0-impl.so bind
