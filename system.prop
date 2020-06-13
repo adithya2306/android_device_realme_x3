@@ -65,3 +65,6 @@ ro.telephony.default_network=22,22
 
 # WFD
 media.wfd.max_resolution=8
+
+# Zygote
+persist.device_config.runtime_native.usap_pool_enabled=true
