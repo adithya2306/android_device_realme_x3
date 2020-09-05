@@ -134,6 +134,9 @@ on property:vendor.post_boot.parsed=1
     write /sys/block/sde/queue/read_ahead_kb 128
     write /sys/block/sdf/queue/read_ahead_kb 128
 
+on property:init.svc.face_hal=restarting
+    stop face_hal
+
 service prop-adap-core-gsi /vendor/bin/self-init gsicore
     class core
     user root
