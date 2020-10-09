@@ -16,6 +16,7 @@ LOCAL_HEADER_LIBRARIES := \
 
 LOCAL_SRC_FILES := \
     power-common.c \
+    power-msmnile.c \
     metadata-parser.c \
     utils.c \
     list.c \
