@@ -16,6 +16,9 @@ dalvik.vm.dex2oat64.enabled=true
 ro.vendor.use_data_netmgrd=true
 persist.vendor.data.mode=concurrent
 
+# FUSE
+persist.sys.fuse.passthrough.enable=true
+
 # GMS
 ro.com.google.clientidbase=android-oppo
 ro.com.google.clientidbase.ms=android-oppo
