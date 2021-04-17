@@ -18,6 +18,9 @@ vendor.mm.enable.qcom_parser=47054591
 # Netflix
 ro.netflix.bsp_rev=Q855-16947-1
 
+# Permissions
+ro.control_privapp_permissions=log
+
 # QTI VA
 ro.vendor.qti.va_aosp.support=1
 
