@@ -1,0 +1,7 @@
+#
+# Realme X3 specific initialization component
+#
+
+on post-fs
+    mount none /system/etc/fstab.qcom /vendor/etc/fstab.qcom bind
+    mount none /vendor/etc/audio/audio_policy_configuration.xml /vendor/etc/audio_policy_configuration.xml bind
