@@ -84,12 +84,20 @@
          Zone N + 1 array[N] <= LUX < infinity
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
-        <item>45</item>
-        <item>1025</item>
-        <item>1480</item>
+        <item>9</item>
+        <item>16</item>
+        <item>35</item>
+        <item>360</item>
+        <item>1200</item>
         <item>2250</item>
-        <item>3300</item>
-        <item>10000</item>
+        <item>4600</item>
+        <item>9999</item>
+        <item>20000</item>
+        <item>30000</item>
+        <item>40000</item>
+        <item>60000</item>
+        <item>100000</item>
+        <item>150000</item>
     </integer-array>
 
     <!-- Array of output values for LCD backlight corresponding to the lux values
@@ -98,22 +106,35 @@
          The brightness values must be between 0 and 255 and be non-decreasing.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>8</item>
-        <item>22</item>
-        <item>48</item>
-        <item>78</item>
-        <item>128</item>
-        <item>206</item>
-        <item>255</item>
+        <item>15</item>
+        <item>65</item>
+        <item>106</item>
+        <item>191</item>
+        <item>317</item>
+        <item>510</item>
+        <item>813</item>
+        <item>1034</item>
+        <item>1508</item>
+        <item>1700</item>
+        <item>2047</item>
+        <item>2214</item>
+        <item>2400</item>
+        <item>2672</item>
+        <item>3018</item>
+        <item>4095</item>
     </integer-array>
 
     <!-- Minimum screen brightness setting allowed by the power manager.
          The user is forbidden from setting the brightness below this level. -->
     <integer name="config_screenBrightnessSettingMinimum">1</integer>
 
+    <!-- Maximum screen brightness allowed by the power manager.
+         The user is forbidden from setting the brightness above this level. -->
+    <integer name="config_screenBrightnessSettingMaximum">4095</integer>
+
     <!-- Default screen brightness setting.
          Must be in the range specified by minimum and maximum. -->
-    <integer name="config_screenBrightnessSettingDefault">44</integer>
+    <integer name="config_screenBrightnessSettingDefault">813</integer>
 
     <!-- Minimum allowable screen brightness to use in a very dark room.
          This value sets the floor for the darkest possible auto-brightness
@@ -132,7 +153,7 @@
     <!-- Screen brightness used to dim the screen while dozing in a very low power state.
          May be less than the minimum allowed brightness setting
          that can be set by the user. -->
-    <integer name="config_screenBrightnessDoze">4</integer>
+    <integer name="config_screenBrightnessDoze">12</integer>
 
     <!-- Operating volatage for bluetooth controller. 0 by default-->
     <integer translatable="false" name="config_bluetooth_operating_voltage_mv">3300</integer>
