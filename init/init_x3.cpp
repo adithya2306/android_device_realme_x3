@@ -72,6 +72,7 @@ void vendor_load_properties() {
     string operatorName;
     string device;
     string model;
+    bool sz = false;
 
     getline(infile, operatorName);
 
@@ -79,6 +80,7 @@ void vendor_load_properties() {
         case 31: // project 19710; superzoom
             device = "RMX2085L1";
             model = "RMX2085";
+            sz = true;
             break;
         case 32: // project 19697
             device = "RMX2082L1";
@@ -87,6 +89,7 @@ void vendor_load_properties() {
         case 33: // project 19711; superzoom
             device = "RMX2086L1";
             model = "RMX2086";
+            sz = true;
             break;
         case 34: // project 19698
             device = "RMX2083L1";
@@ -107,4 +110,6 @@ void vendor_load_properties() {
         set_ro_build_prop(source, "model", model);
         set_ro_build_prop(source, "name", model);
     }
+
+    property_override("ro.arrow.model", sz ? "realme X3 SuperZoom" : "realme X3");
 }
