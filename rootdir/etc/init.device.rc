@@ -126,3 +126,7 @@ on property:vendor.post_boot.parsed=1
     write /sys/block/sdd/queue/read_ahead_kb 128
     write /sys/block/sde/queue/read_ahead_kb 128
     write /sys/block/sdf/queue/read_ahead_kb 128
+
+    # Reset and lock msm_performance
+    write /sys/module/msm_performance/parameters/cpu_min_freq "0:0 4:0 7:0"
+    chmod 0440 /sys/module/msm_performance/parameters/cpu_min_freq
