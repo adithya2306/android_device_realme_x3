@@ -3,6 +3,7 @@
 #
 
 on post-fs
+    mount none /system/bin/hw/android.hardware.power@1.2-service /vendor/bin/hw/android.hardware.power@1.2-service bind
     mount none /system/etc/fstab.qcom /vendor/etc/fstab.qcom bind
     mount none /system/etc/msm_irqbalance.conf /vendor/etc/msm_irqbalance.conf bind
     mount none /vendor/etc/audio/audio_policy_configuration.xml /vendor/etc/audio_policy_configuration.xml bind
