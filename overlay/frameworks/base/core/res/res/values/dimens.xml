@@ -31,4 +31,7 @@
         orientation. If zero, the value of rounded_corner_radius is used. -->
     <dimen name="rounded_corner_radius_bottom">88.0px</dimen>
 
+    <!-- Height of area above QQS where battery/time go -->
+    <dimen name="quick_qs_offset_height">120.0px</dimen>
+
 </resources>

@@ -19,9 +19,9 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- The padding around the statusbar -->
-    <dimen name="status_bar_padding_top">6dp</dimen>
+    <dimen name="status_bar_padding_top">8dp</dimen>
     <dimen name="status_bar_padding_start">2dp</dimen>
-    <dimen name="status_bar_padding_end">6dp</dimen>
+    <dimen name="status_bar_padding_end">5dp</dimen>
     <dimen name="rounded_corner_content_padding">16dp</dimen>
 
 </resources>
