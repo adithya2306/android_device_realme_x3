@@ -33,13 +33,8 @@ public class CABCTileService extends TileService {
 
         Tile tile = getQsTile();
 
-        if (!sharedPrefs.getBoolean("CABC_DeviceMatched", false)) {
-            tile.setState(Tile.STATE_UNAVAILABLE);
-            tile.setLabel(getResources().getString(R.string.unsupported));
-        } else {
-            tile.setState(Tile.STATE_ACTIVE);
-            tile.setLabel(getResources().getStringArray(R.array.cabc_profiles)[currentState]);
-        }
+        tile.setState(Tile.STATE_ACTIVE);
+        tile.setLabel(getResources().getStringArray(R.array.cabc_profiles)[currentState]);
 
         tile.updateTile();
         super.onStartListening();

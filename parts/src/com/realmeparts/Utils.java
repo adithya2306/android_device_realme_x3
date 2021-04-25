@@ -20,7 +20,6 @@ package com.realmeparts;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemProperties;
@@ -210,10 +209,6 @@ public class Utils {
         } else {
             return res.getString(resId);
         }
-    }
-
-    public static String ProductName() {
-        return Build.PRODUCT;
     }
 
     public static String InputStreamToString(InputStream inputStream) {

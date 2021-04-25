@@ -88,10 +88,10 @@ public class GameModeSwitch implements OnPreferenceChangeListener {
     }
 
     public static void ShowToast() {
-        if (isCurrentlyEnabled(mContext)) {
-            Toast.makeText(mContext, "GameMode is activated. ", Toast.LENGTH_SHORT).show();
-        } else
-            Toast.makeText(mContext, "GameMode is deactivated. ", Toast.LENGTH_SHORT).show();
+        if (isCurrentlyEnabled(mContext))
+            Toast.makeText(mContext, R.string.game_mode_activated_toast, Toast.LENGTH_SHORT).show();
+        else
+            Toast.makeText(mContext, R.string.game_mode_deactivated_toast, Toast.LENGTH_SHORT).show();
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
