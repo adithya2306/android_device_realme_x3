@@ -7,6 +7,16 @@ on boot
     chown system system /sys/class/leds/vibrator/vmax
     chmod 0644 /sys/class/leds/vibrator/vmax
 
+    # Game Mode
+    chown system system /proc/touchpanel/game_switch_enable
+    chmod 0644 /proc/touchpanel/game_switch_enable
+
+    chown system system /proc/touchpanel/oppo_tp_direction
+    chmod 0644 /proc/touchpanel/oppo_tp_direction
+
+    chown system system /proc/touchpanel/oppo_tp_limit_enable
+    chmod 0644 /proc/touchpanel/oppo_tp_limit_enable
+
 # CABC
 on property:persist.cabc_profile=*
     write /sys/kernel/oppo_display/cabc ${persist.cabc_profile}
