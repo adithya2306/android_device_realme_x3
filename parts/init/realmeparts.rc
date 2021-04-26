@@ -1,0 +1,16 @@
+on boot
+    # CABC
+    chown system system /sys/kernel/oppo_display/cabc
+    chmod 0644 /sys/kernel/oppo_display/cabc
+
+    # Vibration Strength
+    chown system system /sys/class/leds/vibrator/vmax
+    chmod 0644 /sys/class/leds/vibrator/vmax
+
+# CABC
+on property:persist.cabc_profile=*
+    write /sys/kernel/oppo_display/cabc ${persist.cabc_profile}
+
+# Vibration Strength
+on property:persist.vib_strength=*
+    write /sys/class/leds/vibrator/vmax ${persist.vib_strength}

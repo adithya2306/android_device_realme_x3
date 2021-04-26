@@ -84,7 +84,7 @@ PRODUCT_PACKAGES += \
     RealmeParts
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/parts/init/cabc.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/cabc.rc
+    $(LOCAL_PATH)/parts/init/realmeparts.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/realmeparts.rc
 
 # Perf
 PRODUCT_COPY_FILES += \
