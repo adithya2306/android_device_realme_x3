@@ -947,30 +947,14 @@
     <string-array translatable="false" name="config_defaultPinnerServiceFiles">
         <item>"/system/bin/surfaceflinger"</item>
         <item>"/system/framework/framework.jar"</item>
-        <item>"/system/framework/arm/boot-framework.oat"</item>
         <item>"/system/framework/arm64/boot-framework.oat"</item>
         <item>"/system/framework/services.jar"</item>
         <item>"/system/framework/oat/arm64/services.odex"</item>
         <item>"/system/framework/ext.jar"</item>
-        <item>"/system/framework/arm/boot-ext.oat"</item>
         <item>"/system/framework/arm64/boot-ext.oat"</item>
-        <item>"/system/framework/QPerformance.jar"</item>
-        <item>"/system/framework/arm/boot-QPerformance.oat"</item>
-        <item>"/system/framework/arm64/boot-QPerformance.oat"</item>
-        <item>"/system/framework/UxPerformance.jar"</item>
-        <item>"/system/framework/arm/boot-UxPerformance.oat"</item>
-        <item>"/system/framework/arm64/boot-UxPerformance.oat"</item>
         <item>"/system/system_ext/priv-app/SystemUI/SystemUI.apk"</item>
         <item>"/system/system_ext/priv-app/SystemUI/oat/arm64/SystemUI.odex"</item>
-        <item>"/system/lib/libsurfaceflinger.so"</item>
         <item>"/system/lib64/libsurfaceflinger.so"</item>
-        <item>"/system/lib/libRScpp.so"</item>
-        <item>"/system/lib/libRS.so"</item>
-        <item>"/system/lib/libRS_internal.so"</item>
-        <item>"/system/lib/libbcinfo.so"</item>
-        <item>"/system/lib/libRSDriver.so"</item>
-        <item>"/system/lib/libRSCpuRef.so"</item>
-        <item>"/system/lib/libblas.so"</item>
         <item>"/system/lib64/libRScpp.so"</item>
         <item>"/system/lib64/libRS.so"</item>
         <item>"/system/lib64/libRS_internal.so"</item>
@@ -978,14 +962,6 @@
         <item>"/system/lib64/libRSDriver.so"</item>
         <item>"/system/lib64/libRSCpuRef.so"</item>
         <item>"/system/lib64/libblas.so"</item>
-        <item>"/vendor/lib/lib_aion_buffer.so"</item>
-        <item>"/vendor/lib/libcamxexternalformatutils.so"</item>
-        <item>"/vendor/lib/libipebpsstriping.so"</item>
-        <item>"/vendor/lib/libCB.so"</item>
-        <item>"/vendor/lib/libgsl.so"</item>
-        <item>"/vendor/lib64/lib_aion_buffer.so"</item>
-        <item>"/vendor/lib64/libcamxexternalformatutils.so"</item>
-        <item>"/vendor/lib64/libipebpsstriping.so"</item>
         <item>"/vendor/lib64/libCB.so"</item>
         <item>"/vendor/lib64/libgsl.so"</item>
         <item>"/apex/com.android.art/javalib/arm64/boot.oat"</item>
@@ -1006,15 +982,7 @@
         <item>"/apex/com.android.art/javalib/core-libart.jar"</item>
         <item>"/apex/com.android.media/javalib/updatable-media.jar"</item>
         <item>"/system/system_ext/priv-app/SystemUI/SystemUI.apk"</item>
-        <item>"/system/lib/libsurfaceflinger.so"</item>
         <item>"/system/lib64/libsurfaceflinger.so"</item>
-        <item>"/system/lib/libRScpp.so"</item>
-        <item>"/system/lib/libRS.so"</item>
-        <item>"/system/lib/libRS_internal.so"</item>
-        <item>"/system/lib/libbcinfo.so"</item>
-        <item>"/system/lib/libRSDriver.so"</item>
-        <item>"/system/lib/libRSCpuRef.so"</item>
-        <item>"/system/lib/libblas.so"</item>
         <item>"/system/lib64/libRScpp.so"</item>
         <item>"/system/lib64/libRS.so"</item>
         <item>"/system/lib64/libRS_internal.so"</item>
@@ -1022,14 +990,6 @@
         <item>"/system/lib64/libRSDriver.so"</item>
         <item>"/system/lib64/libRSCpuRef.so"</item>
         <item>"/system/lib64/libblas.so"</item>
-        <item>"/vendor/lib/lib_aion_buffer.so"</item>
-        <item>"/vendor/lib/libcamxexternalformatutils.so"</item>
-        <item>"/vendor/lib/libipebpsstriping.so"</item>
-        <item>"/vendor/lib/libCB.so"</item>
-        <item>"/vendor/lib/libgsl.so"</item>
-        <item>"/vendor/lib64/lib_aion_buffer.so"</item>
-        <item>"/vendor/lib64/libcamxexternalformatutils.so"</item>
-        <item>"/vendor/lib64/libipebpsstriping.so"</item>
         <item>"/vendor/lib64/libCB.so"</item>
         <item>"/vendor/lib64/libgsl.so"</item>
     </string-array>
