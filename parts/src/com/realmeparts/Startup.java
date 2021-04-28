@@ -57,6 +57,7 @@ public class Startup extends BroadcastReceiver {
         if (enabled) {
             Utils.startService(context, FPSInfoService.class);
         }
+        Utils.startService(context, FPSTileService.class);
         Utils.startService(context, ChargingCoolDownService.class);
     }
 

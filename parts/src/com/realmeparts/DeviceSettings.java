@@ -82,7 +82,7 @@ public class DeviceSettings extends PreferenceFragment
         mDNDSwitch.setOnPreferenceChangeListener(this);
 
         mFpsInfo = findPreference(KEY_FPS_INFO);
-        mFpsInfo.setChecked(prefs.getBoolean(KEY_FPS_INFO, false));
+        mFpsInfo.setChecked(Utils.isFpsInfoShowing(getActivity().getApplicationContext()));
         mFpsInfo.setOnPreferenceChangeListener(this);
 
         mCABC = (SecureSettingListPreference) findPreference(KEY_CABC);
@@ -103,9 +103,9 @@ public class DeviceSettings extends PreferenceFragment
         if (preference == mFpsInfo) {
             boolean enabled = (Boolean) newValue;
             if (enabled) {
-                Utils.startService(this.getContext(), com.realmeparts.FPSInfoService.class);
+                Utils.startService(getActivity().getApplicationContext(), FPSInfoService.class);
             } else {
-                Utils.stopService(this.getContext(), com.realmeparts.FPSInfoService.class);
+                Utils.stopService(getActivity().getApplicationContext(), FPSInfoService.class);
             }
         }
 

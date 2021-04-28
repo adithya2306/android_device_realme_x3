@@ -66,7 +66,6 @@
             </intent-filter>
         </receiver>
 
-        <!-- Quick Settings Tiles -->
         <service
             android:name="com.realmeparts.GameModeTileService"
             android:icon="@drawable/ic_game_tile"
@@ -81,6 +80,7 @@
         <service android:name="com.realmeparts.FPSInfoService"
                 android:exported="false">
         </service>
+
         <service
             android:name="com.realmeparts.OtgToggleService"
             android:icon="@drawable/ic_otg_tile"
@@ -91,6 +91,7 @@
                     android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
         </service>
+
         <service
             android:name="com.realmeparts.CABCTileService"
             android:icon="@drawable/ic_cabc"
@@ -101,8 +102,20 @@
                     android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
         </service>
+
         <service android:name="com.realmeparts.ChargingCoolDownService"
                  android:exported="false">
+        </service>
+
+        <service
+            android:name=".FPSTileService"
+            android:icon="@drawable/fps_info_icon"
+            android:label="@string/fps_info_title"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action
+                    android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
         </service>
     </application>
 </manifest>

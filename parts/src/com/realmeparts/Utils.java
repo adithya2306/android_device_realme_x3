@@ -17,6 +17,7 @@
  */
 package com.realmeparts;
 
+import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -309,5 +310,17 @@ public class Utils {
     public static void stopService(Context context, Class<?> serviceClass ) {
         context.stopServiceAsUser(new Intent(context, serviceClass), UserHandle.CURRENT);
         Log.d("DeviceSettings", "Stopping "+ serviceClass.getCanonicalName());
+    }
+
+    public static boolean isFpsInfoShowing(Context context) {
+        boolean isShowing = false;
+        ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningServiceInfo service : am.getRunningServices(Integer.MAX_VALUE)) {
+            if (FPSInfoService.class.getName().equals(service.service.getClassName())) {
+                isShowing = true;
+                break;
+            }
+        }
+        return isShowing;
     }
 }
