@@ -57,6 +57,7 @@ public class Startup extends BroadcastReceiver {
         if (enabled) {
             Utils.startService(context, FPSInfoService.class);
         }
+        Utils.startService(context, ChargingCoolDownService.class);
     }
 
     private boolean hasRestoredTunable(Context context) {

@@ -101,8 +101,8 @@
                     android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
         </service>
-        <service android:name="com.realmeparts.SmartChargingService"
-                android:exported="false">
+        <service android:name="com.realmeparts.ChargingCoolDownService"
+                 android:exported="false">
         </service>
     </application>
 </manifest>
