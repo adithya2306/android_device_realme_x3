@@ -116,6 +116,10 @@ BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := system
 BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 2147483648
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 
+BOARD_ROOT_EXTRA_SYMLINKS := \
+    /mnt/vendor/oppo_product:/oppo_product \
+    /mnt/vendor/oppo_version:/oppo_version
+
 BOARD_USES_METADATA_PARTITION := true
 BUILD_WITHOUT_VENDOR := true
 TARGET_COPY_OUT_VENDOR := vendor
@@ -141,6 +145,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
 # Sepolicy
 include device/qcom/sepolicy/SEPolicy.mk
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
