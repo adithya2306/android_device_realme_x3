@@ -1,3 +1,7 @@
+# Bionic
+ro.bionic.cpu_variant=cortex-a76
+ro.bionic.2nd_cpu_variant=cortex-a76
+
 # Bluetooth
 persist.bluetooth.disableinbandringing=false
 persist.bluetooth.specificatcmdsenable=true
@@ -14,6 +18,10 @@ vendor.camera.aux.packagelist=com.android.camera,com.oppo.camera,org.codeaurora.
 
 # Charger
 ro.charger.enable_suspend=true
+
+# Dalvik
+dalvik.vm.isa.arm.variant=cortex-a76
+dalvik.vm.isa.arm64.variant=cortex-a76
 
 # Dex2oat
 dalvik.vm.dex2oat64.enabled=true
