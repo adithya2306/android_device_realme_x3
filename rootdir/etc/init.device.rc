@@ -33,6 +33,12 @@ on early-init
     write /sys/block/dm-8/queue/read_ahead_kb 2048
     write /sys/block/dm-9/queue/read_ahead_kb 2048
 
+on fs
+    mkdir /mnt/vendor/oppo_product 0771 system system
+    mkdir /mnt/vendor/oppo_version 0771 system system
+    mount ext4 /dev/block/mapper/version.${ro.vendor.version_variant} /mnt/vendor/oppo_version ro
+    mount ext4 /dev/block/mapper/oppo_product /mnt/vendor/oppo_product ro
+
 on post-fs
     mount none /system/bin/hw/android.hardware.power@1.2-service /vendor/bin/hw/android.hardware.power@1.2-service bind
     mount none /system/etc/fstab.qcom /vendor/etc/fstab.qcom bind
@@ -130,3 +136,19 @@ on property:vendor.post_boot.parsed=1
     # Reset and lock msm_performance
     write /sys/module/msm_performance/parameters/cpu_min_freq "0:0 4:0 7:0"
     chmod 0440 /sys/module/msm_performance/parameters/cpu_min_freq
+
+service prop-adap-core-gsi /vendor/bin/self-init gsicore
+    class core
+    user root
+    group root system radio
+    oneshot
+    override
+    disabled
+
+service prop-adap-main-gsi /vendor/bin/self-init gsimain
+    class main
+    user root
+    group root system radio
+    oneshot
+    override
+    disabled
