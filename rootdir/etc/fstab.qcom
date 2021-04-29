@@ -5,17 +5,10 @@
 #<src>                                                  <mnt_point>            <type>  <mnt_flags and options>                              <fs_mgr_flags>
 system                                                  /system                ext4    ro,barrier=1,discard                                 wait,avb=vbmeta_system,logical,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
 vendor                                                  /vendor                ext4    ro,barrier=1,discard                                 wait,avb=vbmeta_vendor,logical,first_stage_mount
-oppo_product                                            /oppo_product          ext4    ro,barrier=1,discard                                 wait,logical,first_stage_mount,nofail
-engineering                                             /oppo_engineering      ext4    ro,barrier=1,discard                                 wait,logical,first_stage_mount,nofail
-preload_common                                          /preload_common        ext4    ro,barrier=1,discard                                 wait,logical,first_stage_mount,nofail
 /dev/block/by-name/metadata                             /metadata              ext4    noatime,nosuid,nodev,discard                         wait,formattable,first_stage_mount
-/dev/block/bootdevice/by-name/custom                    /oppo_custom           ext4    ro,barrier=1,discard                                 wait,nofail
-/dev/block/bootdevice/by-name/preload                   /preload_special       ext4    ro,barrier=1,discard                                 wait,nofail
 /dev/block/bootdevice/by-name/cache                     /cache                 ext4    nosuid,noatime,nodev,barrier=1                       wait,check
 /dev/block/bootdevice/by-name/boot                      /boot                  emmc    defaults                                             recoveryonly
 /dev/block/bootdevice/by-name/userdata                  /data                  ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc,discard latemount,wait,check,formattable,resize,encryptable=ice,wrappedkey,keydirectory=/metadata/vold/metadata_encryption,quota,reservedsize=128M
-/devices/platform/soc/8804000.sdhci/mmc_host*           /storage/sdcard1       vfat    nosuid,nodev                                         wait,voldmanaged=sdcard1:auto
-/devices/platform/soc/1da4000.ufshc_card/host*          /storage/sdcard1       vfat    nosuid,nodev                                         wait,voldmanaged=sdcard1:auto
 /devices/platform/soc/*.ssusb/*.dwc3/xhci-hcd.*.auto*   /storage/usbotg        vfat    nosuid,nodev                                         wait,voldmanaged=usbotg:auto
 /dev/block/bootdevice/by-name/modem                     /vendor/firmware_mnt   vfat    ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0 wait
 /dev/block/bootdevice/by-name/dsp                       /vendor/dsp            ext4    ro,nosuid,nodev,barrier=1                            wait
