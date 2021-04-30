@@ -135,10 +135,6 @@ on property:vendor.post_boot.parsed=1
     write /sys/block/sde/queue/read_ahead_kb 128
     write /sys/block/sdf/queue/read_ahead_kb 128
 
-    # Reset and lock msm_performance
-    write /sys/module/msm_performance/parameters/cpu_min_freq "0:0 4:0 7:0"
-    chmod 0440 /sys/module/msm_performance/parameters/cpu_min_freq
-
 service prop-adap-core-gsi /vendor/bin/self-init gsicore
     class core
     user root
@@ -152,5 +148,12 @@ service prop-adap-main-gsi /vendor/bin/self-init gsimain
     user root
     group root system radio
     oneshot
+    override
+    disabled
+
+service perf-hal-2-0 /vendor/bin/hw/vendor.qti.hardware.perf@2.0-service
+    class hal
+    user root
+    group root readproc oem_2907
     override
     disabled
