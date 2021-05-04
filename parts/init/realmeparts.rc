@@ -17,6 +17,9 @@ on boot
     chown system system /proc/touchpanel/oppo_tp_limit_enable
     chmod 0644 /proc/touchpanel/oppo_tp_limit_enable
 
+    chown system system /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost
+    chmod 0644 /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost
+
 # CABC
 on property:persist.cabc_profile=*
     write /sys/kernel/oppo_display/cabc ${persist.cabc_profile}
@@ -28,6 +31,8 @@ on property:persist.vib_strength=*
 # Game Mode
 on property:perf_profile=1
     write /dev/stune/top-app/schedtune.boost 10
+    write /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 2
 
 on property:perf_profile=0
     write /dev/stune/top-app/schedtune.boost 1
+    write /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 0
