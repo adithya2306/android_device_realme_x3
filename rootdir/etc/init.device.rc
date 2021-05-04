@@ -3,6 +3,10 @@
 #
 
 on early-init
+    # Boost schedtune globally
+    write /dev/stune/schedtune.boost 50
+    write /dev/stune/schedtune.prefer_idle 1
+
     # Disable UFS clock scaling
     write /sys/bus/platform/devices/1d84000.ufshc/clkscale_enable 0
 
@@ -54,6 +58,10 @@ on post-fs
     mount none /dev/null /vendor/lib64/hw/android.hardware.light@2.0-impl.so bind
 
 on property:sys.boot_completed=1
+    # Reset schedtune globally
+    write /dev/stune/schedtune.prefer_idle 0
+    write /dev/stune/schedtune.boost 0
+
     # Enable UFS clock scaling back
     write /sys/bus/platform/devices/1d84000.ufshc/clkscale_enable 1
 
