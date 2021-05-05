@@ -118,7 +118,7 @@ void vendor_load_properties() {
     }
 
     property_override("ro.vendor.version_variant", project.c_str());
-    property_override("ro.arrow.model", sz ? "realme X3 SuperZoom" : "realme X3");
+    property_override("ro.wave.device_name", sz ? "realme X3 SuperZoom" : "realme X3");
 
     // Safetynet Workaround
     property_override("ro.build.description", "walleye-user 8.1.0 OPM1.171019.011 4448085 release-keys");

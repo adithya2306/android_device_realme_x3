@@ -23,9 +23,6 @@ ro.charger.enable_suspend=true
 dalvik.vm.isa.arm.variant=cortex-a76
 dalvik.vm.isa.arm64.variant=cortex-a76
 
-# Dex2oat
-dalvik.vm.dex2oat64.enabled=true
-
 # Display
 ro.sf.lcd_density=440
 ro.surface_flinger.has_HDR_display=true

@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2021 ArrowOS
+# Copyright (C) 2021 WaveOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,17 +21,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit device configuration
 $(call inherit-product, device/realme/x3/device.mk)
 
-# Inherit common ArrowOS configuration
+# Inherit common WaveOS configuration
 TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_INCLUDE_PIXEL_CHARGER := true
-$(call inherit-product, vendor/arrow/config/common.mk)
+$(call inherit-product, vendor/wave/configs/common.mk)
 
 # Device identifier
-PRODUCT_NAME := arrow_x3
+PRODUCT_NAME := wave_x3
 PRODUCT_DEVICE := x3
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := X3
 PRODUCT_MANUFACTURER := realme
 PRODUCT_GMS_CLIENTID_BASE := android-oppo
-
-DEVICE_MAINTAINER := Adithya R (ghostrider-reborn)
