@@ -101,17 +101,17 @@ on property:vendor.post_boot.parsed=1
     write /dev/stune/top-app/schedtune.prefer_idle 1
 
     # Setup schedutil rate limits
+    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us 1000
+    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us 1000
     write /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us 1000
     write /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us 1000
     write /sys/devices/system/cpu/cpufreq/policy7/schedutil/up_rate_limit_us 1000
     write /sys/devices/system/cpu/cpufreq/policy7/schedutil/down_rate_limit_us 1000
 
     # Setup schedutil hispeed freq
+    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq 1785600
     write /sys/devices/system/cpu/cpufreq/policy4/schedutil/hispeed_freq 2016000
     write /sys/devices/system/cpu/cpufreq/policy7/schedutil/hispeed_freq 2323200
-
-    # Use perf governor on little cluster
-    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "performance"
 
     # Configure scheduler parameters
     write /proc/sys/kernel/sched_child_runs_first 1
