@@ -96,6 +96,9 @@ product/lib64/vendor.qti.imsrtpservice@2.1.so
 # IMS - from raphael 20.4.27 QFKCNXM
 -product/priv-app/ims/ims.apk|4f5dcb7156375cb94fdc37fc933473a7ce553fa9
 
+# QTI Telephony - from LA.QSSI.11.0.r1-10400-qssi.0
+system_ext/framework/qti-telephony-common.jar|1fd37129f961e58f9d1189736e2cb46290666b97
+
 # RIL
 etc/permissions/privapp-permissions-qti.xml
 etc/permissions/qti_libpermissions.xml
