@@ -25,11 +25,11 @@
 
     <!-- Radius of the software rounded corners at the top of the display in its natural
         orientation. If zero, the value of rounded_corner_radius is used. -->
-    <dimen name="rounded_corner_radius_top">88.0px</dimen>
+    <dimen name="rounded_corner_radius_top">108.0px</dimen>
 
     <!-- Radius of the software rounded corners at the bottom of the display in its natural
         orientation. If zero, the value of rounded_corner_radius is used. -->
-    <dimen name="rounded_corner_radius_bottom">88.0px</dimen>
+    <dimen name="rounded_corner_radius_bottom">108.0px</dimen>
 
     <!-- Height of area above QQS where battery/time go -->
     <dimen name="quick_qs_offset_height">120.0px</dimen>
