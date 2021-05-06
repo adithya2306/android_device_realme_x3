@@ -55,7 +55,7 @@
                 android:resource="@drawable/ic_homepage_settings" />
             <meta-data
                 android:name="com.android.settings.bg.hint"
-                android:resource="@color/ic_settings_background" />
+                android:resource="@color/device_settings_wave_bg" />
             <meta-data
                 android:name="com.android.settings.category"
                 android:value="com.android.settings.category.ia.homepage" />

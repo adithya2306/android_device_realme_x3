@@ -16,10 +16,7 @@
 -->
 <resources>
 
-    <!-- RealmeParts launcher icon background -->
-    <color name="ic_launcher_background">#ff0000</color>
-
     <!-- RealmeParts settings homepage icon background -->
-    <color name="device_settings_wave_bg">#f7f7f7</color>
+    <color name="device_settings_wave_bg">#202124</color>
 
 </resources>
