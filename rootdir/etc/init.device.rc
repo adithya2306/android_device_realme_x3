@@ -111,7 +111,6 @@ on property:vendor.post_boot.parsed=1
 
     # Configure scheduler parameters
     write /proc/sys/kernel/sched_child_runs_first 1
-    write /proc/sys/kernel/sched_tunable_scaling 1
 
     # Override readahead to 128KiB
     write /sys/block/dm-0/queue/read_ahead_kb 128
