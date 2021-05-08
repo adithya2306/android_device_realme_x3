@@ -105,6 +105,10 @@ on property:vendor.post_boot.parsed=1
     write /sys/devices/system/cpu/cpufreq/policy4/schedutil/hispeed_freq 2016000
     write /sys/devices/system/cpu/cpufreq/policy7/schedutil/hispeed_freq 2323200
 
+    # Configure llccbw and ddrbw max_freq
+    write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/max_freq 15258
+    write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/max_freq 7980
+
     # Configure scheduler parameters
     write /proc/sys/kernel/sched_child_runs_first 1
     write /proc/sys/kernel/sched_tunable_scaling 1
