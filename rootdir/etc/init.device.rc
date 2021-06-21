@@ -50,6 +50,11 @@ on post-fs
     mount none /vendor/lost+found /vendor/overlay bind
 
 on property:sys.boot_completed=1
+    # Disable touchpanel edge limit control interface
+    chown system system /proc/touchpanel/oppo_tp_limit_enable
+    chown 0660 /proc/touchpanel/oppo_tp_limit_enable
+    write /proc/touchpanel/oppo_tp_limit_enable 0
+
     # Reset schedtune globally
     write /dev/stune/schedtune.prefer_idle 0
     write /dev/stune/schedtune.boost 0
