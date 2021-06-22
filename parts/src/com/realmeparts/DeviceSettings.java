@@ -48,7 +48,6 @@ public class DeviceSettings extends PreferenceFragment
     public static final String KEY_VIBRATION_STRENGTH = "vibration_strength";
     public static final String CABC_SYSTEM_PROPERTY = "persist.cabc_profile";
     public static final String VIB_STRENGTH_SYSTEM_PROPERTY = "persist.vib_strength";
-    public static final String TP_LIMIT_ENABLE = "/proc/touchpanel/oppo_tp_limit_enable";
     public static final String TP_DIRECTION = "/proc/touchpanel/oppo_tp_direction";
     private static NotificationManager mNotificationManager;
     private Vibrator mVibrator;

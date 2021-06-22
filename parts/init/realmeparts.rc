@@ -14,9 +14,6 @@ on boot
     chown system system /proc/touchpanel/oppo_tp_direction
     chmod 0644 /proc/touchpanel/oppo_tp_direction
 
-    chown system system /proc/touchpanel/oppo_tp_limit_enable
-    chmod 0644 /proc/touchpanel/oppo_tp_limit_enable
-
     chown system system /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost
     chmod 0644 /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost
 
