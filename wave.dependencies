@@ -1,0 +1,10 @@
+[
+    {
+        "repository":  "kernel_realme_x3",
+        "target_path": "kernel/realme/x3"
+    },
+    {
+        "repository":  "vendor_realme_x3",
+        "target_path": "vendor/realme/x3"
+    }
+]
