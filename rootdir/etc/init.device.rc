@@ -3,13 +3,6 @@
 #
 
 on early-init
-    # Boost schedtune globally
-    write /dev/stune/schedtune.boost 50
-    write /dev/stune/schedtune.prefer_idle 1
-
-    # Disable UFS clock scaling
-    write /sys/bus/platform/devices/1d84000.ufshc/clkscale_enable 0
-
     # Boot time fs tuning
     write /sys/block/sda/queue/iostats 0
     write /sys/block/sda/queue/scheduler cfq
@@ -37,30 +30,21 @@ on early-init
     write /sys/block/dm-8/queue/read_ahead_kb 2048
     write /sys/block/dm-9/queue/read_ahead_kb 2048
 
-on fs
-    mkdir /mnt/vendor/oppo_product 0771 system system
-    mkdir /mnt/vendor/oppo_version 0771 system system
-    mount ext4 /dev/block/mapper/version.${ro.vendor.version_variant} /mnt/vendor/oppo_version ro
-    mount ext4 /dev/block/mapper/oppo_product /mnt/vendor/oppo_product ro
+on init
+    chown system system /proc/touchpanel/double_tap_enable
+    chmod 0660 /proc/touchpanel/double_tap_enable
 
 on post-fs
-    mount none /oppo_product/etc/audio_policy_configuration.xml /vendor/etc/audio_policy_configuration.xml bind
-    mount none /oppo_product/etc/audio_policy_volumes.xml /vendor/etc/audio_policy_volumes.xml bind
-    mount none /oppo_product/etc/default_volume_tables.xml /vendor/etc/default_volume_tables.xml bind
+    mount none /my_product/etc/audio_policy_configuration.xml /vendor/etc/audio_policy_configuration.xml bind
+    mount none /my_product/etc/audio_policy_volumes.xml /vendor/etc/audio_policy_volumes.xml bind
+    mount none /my_product/etc/default_volume_tables.xml /vendor/etc/default_volume_tables.xml bind
     mount none /vendor/lost+found /vendor/overlay bind
 
 on property:sys.boot_completed=1
     # Disable touchpanel edge limit control interface
     chown system system /proc/touchpanel/oppo_tp_limit_enable
-    chown 0660 /proc/touchpanel/oppo_tp_limit_enable
+    chmod 0660 /proc/touchpanel/oppo_tp_limit_enable
     write /proc/touchpanel/oppo_tp_limit_enable 0
-
-    # Reset schedtune globally
-    write /dev/stune/schedtune.prefer_idle 0
-    write /dev/stune/schedtune.boost 0
-
-    # Enable UFS clock scaling back
-    write /sys/bus/platform/devices/1d84000.ufshc/clkscale_enable 1
 
     # Runtime fs tuning
     write /sys/block/sda/queue/nr_requests 128
@@ -97,25 +81,33 @@ on property:vendor.post_boot.parsed=1
     write /dev/stune/top-app/schedtune.boost 1
     write /dev/stune/top-app/schedtune.prefer_idle 1
 
+    # Setup CPU frequencies
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq 1209600
+    write /sys/devices/system/cpu/cpufreq/policy4/schedutil/hispeed_freq 1785600
+    write /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq 1171200
+    write /sys/devices/system/cpu/cpufreq/policy4/schedutil/hispeed_freq 1708800
+    write /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq 1056000
+    write /sys/devices/system/cpu/cpufreq/policy7/schedutil/hispeed_freq 1612800
+
     # Setup schedutil rate limits
-    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us 1000
-    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us 1000
-    write /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us 1000
-    write /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us 1000
-    write /sys/devices/system/cpu/cpufreq/policy7/schedutil/up_rate_limit_us 1000
-    write /sys/devices/system/cpu/cpufreq/policy7/schedutil/down_rate_limit_us 1000
+    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us 500
+    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us 20000
+    write /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us 500
+    write /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us 20000
+    write /sys/devices/system/cpu/cpufreq/policy7/schedutil/up_rate_limit_us 500
+    write /sys/devices/system/cpu/cpufreq/policy7/schedutil/down_rate_limit_us 20000
 
-    # Setup schedutil hispeed freq
-    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq 1785600
-    write /sys/devices/system/cpu/cpufreq/policy4/schedutil/hispeed_freq 2016000
-    write /sys/devices/system/cpu/cpufreq/policy7/schedutil/hispeed_freq 2323200
+    # Setup CPU input boost
+    write /sys/module/cpu_boost/parameters/input_boost_freq "0:1632000 4:1612800 7:1497600"
+    write /sys/module/cpu_boost/parameters/input_boost_ms 100
 
-    # Configure llccbw and ddrbw max_freq
+    # Setup llccbw and ddrbw max_freq
     write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/max_freq 15258
     write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/max_freq 7980
 
-    # Configure scheduler parameters
+    # Setup scheduler parameters
     write /proc/sys/kernel/sched_child_runs_first 1
+    write /proc/sys/kernel/sched_conservative_pl 1
 
     # Override readahead to 128KiB
     write /sys/block/dm-0/queue/read_ahead_kb 128
@@ -138,7 +130,7 @@ on property:vendor.post_boot.parsed=1
 on property:init.svc.face_hal=restarting
     stop face_hal
 
-service prop-adap-core-gsi /vendor/bin/self-init gsicore
+service prop-adap-core-gsi /odm/bin/self-init gsicore
     class core
     user root
     group root system radio
@@ -146,7 +138,7 @@ service prop-adap-core-gsi /vendor/bin/self-init gsicore
     override
     disabled
 
-service prop-adap-main-gsi /vendor/bin/self-init gsimain
+service prop-adap-main-gsi /odm/bin/self-init gsimain
     class main
     user root
     group root system radio
@@ -154,7 +146,7 @@ service prop-adap-main-gsi /vendor/bin/self-init gsimain
     override
     disabled
 
-service perf-hal-2-0 /vendor/bin/hw/vendor.qti.hardware.perf@2.0-service
+service perf-hal-2-2 /vendor/bin/hw/vendor.qti.hardware.perf@2.2-service
     class hal
     user root
     group root readproc oem_2907

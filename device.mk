@@ -52,7 +52,8 @@ PRODUCT_COPY_FILES += \
 
 # Keylayout
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/gpio-keys.kl
+    $(LOCAL_PATH)/configs/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/gpio-keys.kl \
+    $(LOCAL_PATH)/configs/keylayout/touchpanel.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/touchpanel.kl
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -72,8 +73,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # Partitions
 PRODUCT_BUILD_SUPER_PARTITION := false
-PRODUCT_TARGET_VNDK_VERSION := 29
-PRODUCT_EXTRA_VNDK_VERSIONS := 29
+PRODUCT_TARGET_VNDK_VERSION := 30
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
@@ -87,10 +87,6 @@ PRODUCT_COPY_FILES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service.x3
-
-# Permissions
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/handheld_core_hardware.xml
 
 # RCS
 PRODUCT_PACKAGES += \
@@ -122,10 +118,6 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/vendor_overlay/,$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION))
 
-# Vulkan
-PRODUCT_COPY_FILES += \
-     frameworks/native/data/etc/android.software.vulkan.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.software.vulkan.deqp.level.xml
-
 # WiFi
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay \
@@ -134,3 +126,11 @@ PRODUCT_PACKAGES += \
 # WiFi Display
 PRODUCT_BOOT_JARS += \
     WfdCommon
+
+PRODUCT_PACKAGES += \
+    libavservices_minijail \
+    libdisplayconfig.qti \
+    libnl \
+    libqdMetaData \
+    libqdMetaData.system \
+    vendor.display.config@2.0

@@ -13,7 +13,8 @@ persist.vendor.data.mode=concurrent
 # Media
 media.stagefright.thumbnail.prefer_hw_codecs=true
 persist.mm.enable.prefetch=true
-vendor.mm.enable.qcom_parser=47054591
+ro.media.recorder-max-base-layer-fps=60
+vendor.mm.enable.qcom_parser=45987058
 
 # Netflix
 ro.netflix.bsp_rev=Q855-16947-1

@@ -3,13 +3,16 @@ ro.bionic.cpu_variant=cortex-a76
 ro.bionic.2nd_cpu_variant=cortex-a76
 
 # Bluetooth
+persist.bluetooth.bqr.choppy_threshold=9,6
+persist.bluetooth.bqr.event_mask=0x8000000E
+persist.bluetooth.bqr.min_interval_ms=60000
 persist.bluetooth.disableinbandringing=false
 persist.bluetooth.specificatcmdsenable=true
 persist.vendor.bluetooth.modem_nv_support=true
 persist.vendor.bt.a2dp.hal.implementation=true
 persist.vendor.btstack.enable.twsplus=true
 persist.vendor.btstack.enable.twsplussho=true
-persist.vendor.service.bdroid.soc.alwayson=true
+persist.vendor.service.bt.iotinfo.report.enable=true
 
 # Camera
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
@@ -49,7 +52,7 @@ persist.vendor.radio.data_con_rprt=1
 persist.vendor.radio.process_sups_ind=1
 
 # WFD
-persist.debug.wfd.enable=0
+persist.debug.wfd.enable=1
 persist.sys.wfd.virtual=0
 
 # Enable app/sf phase offset as durations. The numbers below are translated from the existing
