@@ -33,7 +33,7 @@
     <string name="tile_otg_mode">USB-OTG</string>
 
     <!-- Game mode -->
-    <string name="game_mode_summary">Boost touch sampling rate and enable performance mode (increases power consumption)</string>
+    <string name="game_mode_summary">Optimize touch screen for gaming and increase device performance</string>
     <string name="game_mode_title">Game Mode</string>
     <string name="dnd_title">Do Not Disturb</string>
     <string name="dnd_summary">DND will be activated if Game Mode is enabled</string>

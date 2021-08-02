@@ -28,9 +28,12 @@ import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceManager;
 
+import static com.realmeparts.DeviceSettings.TP_LIMIT_ENABLE;
+import static com.realmeparts.DeviceSettings.TP_DIRECTION;
+import static com.realmeparts.DeviceSettings.GAME_MODE_SYSTEM_PROPERTY;
+
 public class GameModeSwitch implements OnPreferenceChangeListener {
     public static final int GameMode_Notification_Channel_ID = 0x11011;
-    private static final String FILE = "/proc/touchpanel/game_switch_enable";
     private static final boolean GameMode = false;
     private static Context mContext;
     private static NotificationManager mNotificationManager;
@@ -41,19 +44,15 @@ public class GameModeSwitch implements OnPreferenceChangeListener {
         userSelectedDndMode = mContext.getSystemService(NotificationManager.class).getCurrentInterruptionFilter();
     }
 
-    public static String getFile() {
-        if (Utils.fileWritable(FILE)) {
-            return FILE;
-        }
-        return null;
-    }
-
     public static boolean isSupported() {
-        return Utils.fileWritable(getFile());
+        return Utils.fileWritable(TP_LIMIT_ENABLE)
+                && Utils.fileWritable(TP_DIRECTION);
     }
 
     public static boolean isCurrentlyEnabled(Context context) {
-        return Utils.getFileValueAsBoolean(getFile(), false);
+        return Utils.getFileValue(TP_LIMIT_ENABLE, "1").equals("0")
+                && Utils.getFileValue(TP_DIRECTION, "0").equals("1")
+                && SystemProperties.getBoolean(GAME_MODE_SYSTEM_PROPERTY, false);
     }
 
     public static boolean checkNotificationPolicy(Context context) {
@@ -96,9 +95,9 @@ public class GameModeSwitch implements OnPreferenceChangeListener {
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         Boolean enabled = (Boolean) newValue;
-        Utils.writeValue(getFile(), enabled ? "1" : "0");
-        Utils.writeValue(DeviceSettings.TP_DIRECTION, enabled ? "1" : "0");
-        SystemProperties.set("perf_profile", enabled ? "1" : "0");
+        Utils.writeValue(TP_LIMIT_ENABLE, enabled ? "0" : "1");
+        Utils.writeValue(TP_DIRECTION, enabled ? "1" : "0");
+        SystemProperties.set(GAME_MODE_SYSTEM_PROPERTY, enabled ? "1" : "0");
         GameModeDND();
         return true;
     }
