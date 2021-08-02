@@ -1,4 +1,4 @@
-service vendor.usb-hal-1-0 /vendor/bin/hw/android.hardware.usb@1.0-service.basic
+service usb-hal-1-0 /system/bin/hw/android.hardware.usb@1.0-service.basic.x3
     interface android.hardware.usb@1.0::IUsb default
     class hal
     user system
