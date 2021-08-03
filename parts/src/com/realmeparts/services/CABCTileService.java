@@ -33,8 +33,9 @@ public class CABCTileService extends TileService {
 
         Tile tile = getQsTile();
 
-        tile.setState(Tile.STATE_ACTIVE);
-        tile.setLabel(getResources().getStringArray(R.array.cabc_profiles)[currentState]);
+        tile.setLabel(getResources().getString(R.string.cabc_title));
+        tile.setSubtitle(getResources().getStringArray(R.array.cabc_profiles)[currentState]);
+        tile.setState(currentState > 0 ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
 
         tile.updateTile();
         super.onStartListening();
@@ -53,7 +54,9 @@ public class CABCTileService extends TileService {
 
         Tile tile = getQsTile();
         Utils.setintProp(DeviceSettings.CABC_SYSTEM_PROPERTY, nextState);
-        tile.setLabel(getResources().getStringArray(R.array.cabc_profiles)[nextState]);
+        tile.setLabel(getResources().getString(R.string.cabc_title));
+        tile.setSubtitle(getResources().getStringArray(R.array.cabc_profiles)[nextState]);
+        tile.setState(nextState > 0 ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
 
         tile.updateTile();
         super.onClick();
