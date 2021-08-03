@@ -152,11 +152,6 @@ Return<uint64_t> BiometricsFingerprint::getAuthenticatorId()  {
 }
 
 Return<RequestStatus> BiometricsFingerprint::cancel()  {
-    if(OplusToAOSPRequestStatus(mOplusBiometricsFingerprint->cancel()) == RequestStatus::SYS_OK)
-       mOplusClientCallback->onError(mOplusBiometricsFingerprint->setNotify(mOplusClientCallback),
-           vendor::oplus::hardware::biometrics::fingerprint::V2_1::FingerprintError::ERROR_CANCELED,
-           0);
-
     return OplusToAOSPRequestStatus(mOplusBiometricsFingerprint->cancel());
 }
 
