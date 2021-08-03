@@ -151,13 +151,6 @@ service prop-adap-main-gsi /odm/bin/self-init gsimain
     override
     disabled
 
-service perf-hal-2-2 /vendor/bin/hw/vendor.qti.hardware.perf@2.2-service
-    class hal
-    user root
-    group root readproc oem_2907
-    override
-    disabled
-
 service boot_lc_main /system/bin/logcat -f /cache/boot_lc_main.txt
     class main
     user root
