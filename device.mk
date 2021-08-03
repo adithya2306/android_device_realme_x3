@@ -87,7 +87,7 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2-service.x3
+    android.hardware.power-service.x3
 
 # RCS
 PRODUCT_PACKAGES += \

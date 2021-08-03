@@ -46,7 +46,6 @@
 #include "hint-data.h"
 #include "performance.h"
 #include "power-common.h"
-#include "power-feature.h"
 #include "utils.h"
 
 static struct hint_handles handles[NUM_HINTS];
@@ -60,7 +59,7 @@ void power_init() {
     }
 }
 
-int __attribute__((weak)) power_hint_override(power_hint_t UNUSED(hint), void* UNUSED(data)) {
+int __attribute__((weak)) power_hint_override(power_hint_t hint, void* data) {
     return HINT_NONE;
 }
 
@@ -98,7 +97,7 @@ void power_hint(power_hint_t hint, void* data) {
     }
 }
 
-int __attribute__((weak)) set_interactive_override(int UNUSED(on)) {
+int __attribute__((weak)) set_interactive_override(int on) {
     return HINT_NONE;
 }
 
@@ -135,6 +134,3 @@ void set_interactive(int on) {
         ALOGI("Hint not handled in set_interactive_override");
     }
 }
-
-void __attribute__((weak))
-set_device_specific_feature(feature_t UNUSED(feature), int UNUSED(state)) {}
