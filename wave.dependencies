@@ -1,5 +1,9 @@
 [
     {
+        "repository":  "hardware_oplus,
+        "target_path": "hardware/oplus"
+    },
+    {
         "repository":  "vendor_realme_x3",
         "target_path": "vendor/realme/x3"
     }
