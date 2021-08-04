@@ -130,6 +130,15 @@ on property:vendor.post_boot.parsed=1
 on property:init.svc.face_hal=restarting
     stop face_hal
 
+on property:gsm.version.baseband=*
+    start set_baseband
+
+service set_baseband /product/bin/init.set_baseband.sh
+    class late_start
+    user system
+    group system
+    oneshot
+
 service prop-adap-core-gsi /odm/bin/self-init gsicore
     class core
     user root
