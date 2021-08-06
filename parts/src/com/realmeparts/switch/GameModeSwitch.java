@@ -51,7 +51,6 @@ public class GameModeSwitch implements OnPreferenceChangeListener {
 
     public static boolean isCurrentlyEnabled(Context context) {
         return Utils.getFileValue(TP_LIMIT_ENABLE, "1").equals("0")
-                && Utils.getFileValue(TP_DIRECTION, "0").equals("1")
                 && SystemProperties.getBoolean(GAME_MODE_SYSTEM_PROPERTY, false);
     }
 
@@ -96,8 +95,9 @@ public class GameModeSwitch implements OnPreferenceChangeListener {
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         Boolean enabled = (Boolean) newValue;
         Utils.writeValue(TP_LIMIT_ENABLE, enabled ? "0" : "1");
-        Utils.writeValue(TP_DIRECTION, enabled ? "1" : "0");
         SystemProperties.set(GAME_MODE_SYSTEM_PROPERTY, enabled ? "1" : "0");
+        if (enabled) Utils.startService(mContext, GameModeRotationService.class);
+        else Utils.stopService(mContext, GameModeRotationService.class);
         GameModeDND();
         return true;
     }

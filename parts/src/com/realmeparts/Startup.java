@@ -53,8 +53,8 @@ public class Startup extends BroadcastReceiver {
         restore(OTGModeSwitch.getFile(), enabled);
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_GAME_SWITCH, false);
         restore(DeviceSettings.TP_LIMIT_ENABLE, enabled ? "0" : "1");
-        restore(DeviceSettings.TP_DIRECTION, enabled ? "1" : "0");
         if (enabled) {
+            Utils.startService(context, GameModeRotationService.class);
             AppNotification.Send(context, GameModeSwitch.GameMode_Notification_Channel_ID, context.getString(R.string.game_mode_title), context.getString(R.string.game_mode_notif_content));
         }
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_FPS_INFO, false);
