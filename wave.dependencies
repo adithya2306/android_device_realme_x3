@@ -1,6 +1,6 @@
 [
     {
-        "repository":  "hardware_oplus,
+        "repository":  "hardware_oplus",
         "target_path": "hardware/oplus"
     },
     {
