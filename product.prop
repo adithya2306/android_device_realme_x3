@@ -27,6 +27,7 @@ dalvik.vm.isa.arm.variant=cortex-a76
 dalvik.vm.isa.arm64.variant=cortex-a76
 
 # Display
+persist.sys.sf.native_mode=1
 ro.sf.lcd_density=440
 ro.surface_flinger.has_HDR_display=true
 ro.surface_flinger.has_wide_color_display=true
