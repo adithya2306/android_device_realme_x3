@@ -21,6 +21,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/qcom/opensource/commonsys-intf/bluetooth/overlay/qva
 
+# Camera
+PRODUCT_PACKAGES += \
+    Snap
+
 # Display
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi

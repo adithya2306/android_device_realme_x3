@@ -23,6 +23,7 @@ $(call inherit-product, device/realme/x3/device.mk)
 
 # Inherit common WaveOS configuration
 TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_OPT_OUT_GCAM_GO := true
 $(call inherit-product, vendor/wave/configs/common.mk)
 
 # Device identifier

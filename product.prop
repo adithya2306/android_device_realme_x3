@@ -16,7 +16,7 @@ persist.vendor.service.bt.iotinfo.report.enable=true
 
 # Camera
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
-persist.vendor.camera.privapp.list=com.android.camera,com.oppo.camera,org.codeaurora.snapcam
+persist.vendor.camera.privapp.list=com.android.camera,com.oppo.camera,org.codeaurora.snapcam,org.lineageos.snap
 vendor.camera.aux.packagelist=com.android.camera,com.oppo.camera,org.codeaurora.snapcam
 
 # Charger
