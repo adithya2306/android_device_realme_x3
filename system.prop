@@ -3,6 +3,9 @@ persist.vendor.bt.a2dp.aac_whitelist=false
 ro.bluetooth.library_name=libbluetooth_qti.so
 vendor.bluetooth.soc=cherokee
 
+# CABC
+persist.cabc_profile=1
+
 # CNE
 persist.vendor.cne.feature=1
 
