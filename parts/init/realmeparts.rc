@@ -45,6 +45,7 @@ on property:persist.perf_profile=1
     write /sys/module/cpu_boost/parameters/input_boost_ms 120
     write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/min_freq 7110
     write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/min_freq 5161
+    write /sys/module/lpm_levels/parameters/sleep_disabled 1
 
 on property:persist.perf_profile=0
     write /dev/stune/top-app/schedtune.boost 1
@@ -65,3 +66,4 @@ on property:persist.perf_profile=0
     write /sys/module/cpu_boost/parameters/input_boost_ms 100
     write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/min_freq 2288
     write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/min_freq 762
+    write /sys/module/lpm_levels/parameters/sleep_disabled 0
