@@ -139,6 +139,10 @@ on property:init.svc.vendor.ipacm-diag=running
 on property:init.svc.face_hal=restarting
     stop face_hal
 
+on property:vendor.usb.product_string=*
+    write /config/usb_gadget/g1/strings/0x409/product ${ro.product.marketname}
+    write /config/usb_gadget/g2/strings/0x409/product ${ro.product.marketname}
+
 on property:gsm.version.baseband=*
     start set_baseband
 
