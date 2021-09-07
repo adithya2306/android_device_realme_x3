@@ -118,5 +118,5 @@ void vendor_load_properties() {
     }
 
     property_override("ro.vendor.version_variant", project.c_str());
-    property_override("ro.wave.device_name", sz ? "realme X3 SuperZoom" : "realme X3");
+    property_override("ro.product.marketname", sz ? "realme X3 SuperZoom" : "realme X3");
 }
