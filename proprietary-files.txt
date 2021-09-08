@@ -1,4 +1,4 @@
-# Device proprietary files - from RMX2085_11_C.07 package, unless pinned
+# Device proprietary files - from RMX2081_11_C.08 package, unless pinned
 
 # Alarm
 -product/app/PowerOffAlarm/PowerOffAlarm.apk
