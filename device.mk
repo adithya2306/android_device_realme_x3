@@ -17,6 +17,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 PRODUCT_PACKAGES += \
     AntHalService-Soong
 
+# Bluetooth
+PRODUCT_PACKAGE_OVERLAYS += \
+    vendor/qcom/opensource/commonsys-intf/bluetooth/overlay/qva
+
 # Display
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
