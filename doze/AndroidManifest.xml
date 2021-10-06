@@ -31,7 +31,7 @@
         android:targetSdkVersion="24" />
 
     <application
-        android:label="@string/ambient_display_gestures_title"
+        android:label="@string/ambient_display_title"
         android:persistent="true">
 
         <receiver android:name=".BootCompletedReceiver">
@@ -48,8 +48,8 @@
 
         <activity
             android:name=".doze.DozeSettingsActivity"
-            android:label="@string/ambient_display_gestures_title"
-            android:theme="@style/Theme.Main">
+            android:label="@string/ambient_display_title"
+            android:theme="@style/Theme.SubSettingsBase">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
@@ -58,7 +58,7 @@
                 android:value="com.android.settings.category.ia.lockscreen" />
             <meta-data
                 android:name="com.android.settings.summary"
-                android:value="@string/ambient_display_gestures_summary" />
+                android:value="@string/ambient_display_summary" />
             <meta-data
                 android:name="com.android.settings.order"
                 android:value="1001" />
