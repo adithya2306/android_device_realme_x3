@@ -13,7 +13,10 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/device_title">
+
     <PreferenceCategory
         android:key="graphics"
         android:title="@string/display_title">
@@ -41,6 +44,7 @@
 
         <Preference
             android:key="doze"
+            android:icon="@drawable/ic_doze_wake"
             android:title="@string/ambient_display_gestures_title"
             android:summary="@string/ambient_display_gestures_summary">
             <intent android:action="android.intent.action.MAIN"
