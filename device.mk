@@ -13,6 +13,7 @@ $(call inherit-product, vendor/realme/x3/x3-vendor.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
 # Inherit updatable APEX
+OVERRIDE_PRODUCT_COMPRESSED_APEX := false
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # ANT+
