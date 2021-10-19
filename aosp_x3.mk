@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2021 WaveOS
+# Copyright (C) 2021 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,13 +21,16 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit device configuration
 $(call inherit-product, device/realme/x3/device.mk)
 
-# Inherit common WaveOS configuration
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_OPT_OUT_GCAM_GO := true
-$(call inherit-product, vendor/wave/configs/common.mk)
+ifneq ($(VANILLA_BUILD),true)
+# Inherit from goolag
+$(call inherit-product, vendor/google/gms/config.mk)
+$(call inherit-product, vendor/google-pixel/config.mk)
+else
+$(warning Building vanilla)
+endif
 
 # Device identifier
-PRODUCT_NAME := wave_x3
+PRODUCT_NAME := aosp_x3
 PRODUCT_DEVICE := x3
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := X3

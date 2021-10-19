@@ -52,6 +52,10 @@ ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
 persist.vendor.radio.data_con_rprt=1
 persist.vendor.radio.process_sups_ind=1
 
+# SoC
+ro.soc.manufacturer=QTI
+ro.soc.model=SM8150
+
 # WFD
 persist.debug.wfd.enable=1
 persist.sys.wfd.virtual=0

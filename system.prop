@@ -1,3 +1,7 @@
+# ADB
+ro.adb.secure=0
+persist.sys.usb.config=adb
+
 # Bluetooth
 persist.vendor.bt.a2dp.aac_whitelist=false
 ro.bluetooth.library_name=libbluetooth_qti.so
@@ -9,15 +13,24 @@ persist.cabc_profile=1
 # CNE
 persist.vendor.cne.feature=1
 
+# Dalvik
+dalvik.vm.dex2oat64.enabled=true
+
 # Data
 ro.vendor.use_data_netmgrd=true
 persist.vendor.data.mode=concurrent
+
+# GMS
+ro.com.google.clientidbase=android-xiaomi
 
 # Media
 media.stagefright.thumbnail.prefer_hw_codecs=true
 persist.mm.enable.prefetch=true
 ro.media.recorder-max-base-layer-fps=60
 vendor.mm.enable.qcom_parser=45987058
+
+# One-handed mode
+ro.support_one_handed_mode=true
 
 # Netflix
 ro.netflix.bsp_rev=Q855-16947-1
@@ -27,6 +40,9 @@ ro.control_privapp_permissions=log
 
 # QTI VA
 ro.vendor.qti.va_aosp.support=1
+
+# Settings - Dual SIM
+persist.sys.fflag.override.settings_provider_model=false
 
 # Sensors
 persist.vendor.sensors.enable.mag_filter=true

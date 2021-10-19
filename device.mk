@@ -4,6 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
+
 # Inherit proprietary blobs
 $(call inherit-product, vendor/realme/x3/x3-vendor.mk)
 
@@ -17,21 +19,29 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 PRODUCT_PACKAGES += \
     AntHalService-Soong
 
+# APN
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
+
 # Bluetooth
 PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/qcom/opensource/commonsys-intf/bluetooth/overlay/qva
+    vendor/qcom/opensource/commonsys-intf/bluetooth/overlay/generic
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap
+    Camera2
+
+# Charger
+PRODUCT_PACKAGES += \
+    charger_res_images
 
 # Display
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Doze
-PRODUCT_PACKAGES += \
-    RealmeDoze
+#PRODUCT_PACKAGES += \
+#    RealmeDoze
 
 # Fastbootd
 PRODUCT_PACKAGES += \
@@ -61,6 +71,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.device.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/init.device.rc \
     $(LOCAL_PATH)/rootdir/etc/init.safailnet.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/init.safailnet.rc
 
+# Kernel
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/kernel:kernel
+
 # Keylayout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/gpio-keys.kl \
@@ -81,15 +95,16 @@ DEVICE_PACKAGE_OVERLAYS += \
 # Partitions
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_TARGET_VNDK_VERSION := 30
+PRODUCT_EXTRA_VNDK_VERSIONS := 30
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
 # Parts
-PRODUCT_PACKAGES += \
-    RealmeParts
+#PRODUCT_PACKAGES += \
+#    RealmeParts
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/parts/init/realmeparts.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/realmeparts.rc
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/parts/init/realmeparts.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/realmeparts.rc
 
 # Power
 PRODUCT_PACKAGES += \
@@ -136,9 +151,6 @@ PRODUCT_PACKAGES += \
     WifiOverlay
 
 # WiFi Display
-PRODUCT_BOOT_JARS += \
-    WfdCommon
-
 PRODUCT_PACKAGES += \
     libavservices_minijail \
     libdisplayconfig.qti \
