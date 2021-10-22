@@ -21,7 +21,10 @@ ro.vendor.use_data_netmgrd=true
 persist.vendor.data.mode=concurrent
 
 # GMS
-ro.com.google.clientidbase=android-xiaomi
+ro.com.google.clientidbase=android-oppo
+ro.com.google.clientidbase.ms=android-oppo
+ro.com.google.clientidbase.tx=android-oppo
+ro.com.google.clientidbase.vs=android-oppo
 
 # Media
 media.stagefright.thumbnail.prefer_hw_codecs=true
