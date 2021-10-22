@@ -30,4 +30,8 @@
     <!-- Device specific doze package -->
     <string name="config_customDozePackage">org.lineageos.settings/org.lineageos.settings.doze.DozeSettingsActivity</string>
 
+    <!-- Location of the fingerprint sensor (power button) -->
+    <item name="fingerprint_sensor_location_fraction_x" type="fraction">100%</item>
+    <item name="fingerprint_sensor_location_fraction_y" type="fraction">43%</item>
+
 </resources>
