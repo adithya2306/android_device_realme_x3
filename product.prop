@@ -1,3 +1,6 @@
+# APEX
+ro.apex.updatable=false
+
 # Bionic
 ro.bionic.cpu_variant=cortex-a76
 ro.bionic.2nd_cpu_variant=cortex-a76
