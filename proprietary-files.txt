@@ -50,46 +50,6 @@ system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
 # IMS - from LA.QSSI.11.0.r1-11600-qssi.0
 -system_ext/priv-app/ims/ims.apk|9bd9423a998eae93b2c94a4820459d7b33c8a51a
 
-# Kernel modules
-vendor/lib/modules/audio_adsp_loader.ko:product/vendor_overlay/30/lib/modules/audio_adsp_loader.ko
-vendor/lib/modules/audio_apr.ko:product/vendor_overlay/30/lib/modules/audio_apr.ko
-vendor/lib/modules/audio_extend.ko:product/vendor_overlay/30/lib/modules/audio_extend.ko
-vendor/lib/modules/audio_hdmi.ko:product/vendor_overlay/30/lib/modules/audio_hdmi.ko
-vendor/lib/modules/audio_machine_msmnile.ko:product/vendor_overlay/30/lib/modules/audio_machine_msmnile.ko
-vendor/lib/modules/audio_max98937.ko:product/vendor_overlay/30/lib/modules/audio_max98937.ko
-vendor/lib/modules/audio_mbhc.ko:product/vendor_overlay/30/lib/modules/audio_mbhc.ko
-vendor/lib/modules/audio_native.ko:product/vendor_overlay/30/lib/modules/audio_native.ko
-vendor/lib/modules/audio_pinctrl_wcd.ko:product/vendor_overlay/30/lib/modules/audio_pinctrl_wcd.ko
-vendor/lib/modules/audio_platform.ko:product/vendor_overlay/30/lib/modules/audio_platform.ko
-vendor/lib/modules/audio_q6.ko:product/vendor_overlay/30/lib/modules/audio_q6.ko
-vendor/lib/modules/audio_q6_notifier.ko:product/vendor_overlay/30/lib/modules/audio_q6_notifier.ko
-vendor/lib/modules/audio_q6_pdr.ko:product/vendor_overlay/30/lib/modules/audio_q6_pdr.ko
-vendor/lib/modules/audio_stub.ko:product/vendor_overlay/30/lib/modules/audio_stub.ko
-vendor/lib/modules/audio_swr.ko:product/vendor_overlay/30/lib/modules/audio_swr.ko
-vendor/lib/modules/audio_swr_ctrl.ko:product/vendor_overlay/30/lib/modules/audio_swr_ctrl.ko
-vendor/lib/modules/audio_tfa98xx-v6.ko:product/vendor_overlay/30/lib/modules/audio_tfa98xx-v6.ko
-vendor/lib/modules/audio_usf.ko:product/vendor_overlay/30/lib/modules/audio_usf.ko
-vendor/lib/modules/audio_wcd934x.ko:product/vendor_overlay/30/lib/modules/audio_wcd934x.ko
-vendor/lib/modules/audio_wcd9360.ko:product/vendor_overlay/30/lib/modules/audio_wcd9360.ko
-vendor/lib/modules/audio_wcd9xxx.ko:product/vendor_overlay/30/lib/modules/audio_wcd9xxx.ko
-vendor/lib/modules/audio_wcd_core.ko:product/vendor_overlay/30/lib/modules/audio_wcd_core.ko
-vendor/lib/modules/audio_wcd_spi.ko:product/vendor_overlay/30/lib/modules/audio_wcd_spi.ko
-vendor/lib/modules/audio_wglink.ko:product/vendor_overlay/30/lib/modules/audio_wglink.ko
-vendor/lib/modules/audio_wsa881x.ko:product/vendor_overlay/30/lib/modules/audio_wsa881x.ko
-vendor/lib/modules/modules.alias:product/vendor_overlay/30/lib/modules/modules.alias
-vendor/lib/modules/modules.dep:product/vendor_overlay/30/lib/modules/modules.dep
-vendor/lib/modules/modules.load:product/vendor_overlay/30/lib/modules/modules.load
-vendor/lib/modules/modules.softdep:product/vendor_overlay/30/lib/modules/modules.softdep
-vendor/lib/modules/mpq-adapter.ko:product/vendor_overlay/30/lib/modules/mpq-adapter.ko
-vendor/lib/modules/mpq-dmx-hw-plugin.ko:product/vendor_overlay/30/lib/modules/mpq-dmx-hw-plugin.ko
-vendor/lib/modules/msm_11ad_proxy.ko:product/vendor_overlay/30/lib/modules/msm_11ad_proxy.ko
-vendor/lib/modules/qca_cld3_wlan.ko:product/vendor_overlay/30/lib/modules/qca_cld3_wlan.ko
-vendor/lib/modules/rdbg.ko:product/vendor_overlay/30/lib/modules/rdbg.ko
-vendor/lib/modules/rmnet_perf.ko:product/vendor_overlay/30/lib/modules/rmnet_perf.ko
-vendor/lib/modules/rmnet_shs.ko:product/vendor_overlay/30/lib/modules/rmnet_shs.ko
-vendor/lib/modules/tspp.ko:product/vendor_overlay/30/lib/modules/tspp.ko
-vendor/lib/modules/wil6210.ko:product/vendor_overlay/30/lib/modules/wil6210.ko
-
 # QTI Telephony - from LA.QSSI.11.0.r1-11600-qssi.0
 system_ext/framework/qti-telephony-common.jar|95df25f17305ad570f1b1e0fa59534edce6619f8
 
