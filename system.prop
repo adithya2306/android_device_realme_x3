@@ -44,6 +44,9 @@ ro.control_privapp_permissions=log
 # QTI VA
 ro.vendor.qti.va_aosp.support=1
 
+# Quick Tap
+persist.acryl.columbus.model=tap7cls_crosshatch.tflite
+
 # Sensors
 persist.vendor.sensors.enable.mag_filter=true
 

@@ -950,6 +950,7 @@
         <item>"/system/framework/services.jar"</item>
         <item>"/system/framework/ext.jar"</item>
         <item>"/system/system_ext/priv-app/SystemUI/SystemUI.apk"</item>
+        <item>"/system/system_ext/priv-app/sysuia/sysuia.apk"</item>
         <item>"/system/lib64/libsurfaceflinger.so"</item>
         <item>"/system/lib64/libRScpp.so"</item>
         <item>"/system/lib64/libRS.so"</item>

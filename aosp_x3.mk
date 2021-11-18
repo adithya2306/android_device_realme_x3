@@ -24,7 +24,9 @@ $(call inherit-product, device/realme/x3/device.mk)
 ifneq ($(VANILLA_BUILD),true)
 # Inherit from goolag
 $(call inherit-product, vendor/google/gms/config.mk)
-$(call inherit-product, vendor/google-pixel/config.mk)
+$(call inherit-product, vendor/google/pixel/config.mk)
+$(call inherit-product, vendor/gprivate/gprivate.mk)
+$(call inherit-product, vendor/partner_modules/build/mainline_modules_s_flatten_apex.mk)
 else
 $(warning Building vanilla)
 endif
