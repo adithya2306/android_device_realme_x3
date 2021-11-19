@@ -50,7 +50,7 @@ on property:persist.perf_profile=1
 on property:persist.perf_profile=0
     write /dev/stune/top-app/schedtune.boost 1
     write /proc/sys/kernel/sched_conservative_pl 1
-    write /sys/class/kgsl/kgsl-3d0/min_pwrlevel 5
+    write /sys/class/kgsl/kgsl-3d0/min_pwrlevel 6
     write /sys/class/kgsl/kgsl-3d0/force_bus_on 0
     write /sys/class/kgsl/kgsl-3d0/force_clk_on 0
     write /sys/class/kgsl/kgsl-3d0/force_no_nap 0
