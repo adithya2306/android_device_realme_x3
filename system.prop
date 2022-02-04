@@ -16,6 +16,10 @@ dalvik.vm.dex2oat64.enabled=true
 ro.vendor.use_data_netmgrd=true
 persist.vendor.data.mode=concurrent
 
+# Dexopt
+pm.dexopt.first-boot=quicken
+pm.dexopt.bg-dexopt=everything
+
 # FUSE
 persist.sys.fuse.passthrough.enable=true
 
