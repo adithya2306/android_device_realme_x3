@@ -133,6 +133,8 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Telephony
 PRODUCT_PACKAGES += \
+    extphonelib \
+    extphonelib.xml \
     ims-ext-common \
     ims_ext_common.xml \
     qti-telephony-hidl-wrapper \
@@ -161,6 +163,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libavservices_minijail \
     libdisplayconfig.qti \
+    libdisplayconfig.system.qti \
     libnl \
     libqdMetaData \
     libqdMetaData.system \

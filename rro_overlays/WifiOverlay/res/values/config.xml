@@ -54,6 +54,21 @@
     <!-- Default access point SSID used for tethering -->
     <string name="wifi_tether_configure_ssid_default" translatable="false">Realme</string>
 
+    <!-- Channel list for softap 2G band. Empty means all channels -->
+    <string translateble="false" name="config_wifiSoftap2gChannelList"></string>
+
+    <!-- Channel list for softap 5G band. Empty means all channels -->
+    <string translateble="false" name="config_wifiSoftap5gChannelList"></string>
+
+    <!-- Wifi driver supports WPA3 Simultaneous Authentication of Equals (WPA3-SAE) for softap -->
+    <bool name="config_wifi_softap_sae_supported">true</bool>
+
+    <!-- Wifi driver supports WPA3 Opportunistic Wireless Encryption (WPA3-OWE) for softap -->
+    <bool name="config_vendor_wifi_softap_owe_supported">true</bool>
+
+    <!-- Wifi driver Automatic channel selection (ACS) for softap to include DFS channels -->
+    <bool translatable="false" name="config_wifiSoftapAcsIncludeDfs">true</bool>
+
     <!-- Integer indicating maximum hardware supported client number of soft ap -->
     <integer translatable="false" name="config_wifiHardwareSoftapMaxClientCount">32</integer>
 
@@ -63,6 +78,14 @@
     <!-- Enable adding minimum confirmation duration when sending network score to connectivity service. -->
     <bool translatable="false" name="config_wifiMinConfirmationDurationSendNetworkScoreEnabled">true</bool>
 
-    <!-- Disable WPA2 to WPA3 auto-upgrade -->
-    <bool translatable="false" name="config_wifiSaeUpgradeEnabled">false</bool>
+    <!-- Boolean indicating that wifi only link configuratios that have exact same credentials (i.e PSK) -->
+    <bool translatable="false" name="config_wifi_only_link_same_credential_configurations">false</bool>
+
+    <!-- Boolean indicating that multiple NDPs are allowed on single NDI.
+     Enable Aware NDP interface selection on interface that already has network set up.
+     -->
+    <bool translatable="false" name="config_wifiAllowMultipleNetworksOnSameAwareNdi">true</bool>
+
+    <!-- Integer indicating additional disconnect delay (in ms) after IMS onLost() indication is received -->
+    <integer translatable="false" name="config_wifiDelayDisconnectOnImsLostMs">1000</integer>
 </resources>
