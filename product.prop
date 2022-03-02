@@ -3,7 +3,7 @@ ro.apex.updatable=false
 
 # Bionic
 ro.bionic.cpu_variant=cortex-a76
-ro.bionic.2nd_cpu_variant=cortex-a76
+ro.bionic.2nd_cpu_variant=cortex-a55
 
 # Bluetooth
 persist.bluetooth.bqr.choppy_threshold=9,6
@@ -26,7 +26,7 @@ vendor.camera.aux.packagelist=com.android.camera,com.oppo.camera,org.codeaurora.
 ro.charger.enable_suspend=true
 
 # Dalvik
-dalvik.vm.isa.arm.variant=cortex-a76
+dalvik.vm.isa.arm.variant=cortex-a55
 dalvik.vm.isa.arm64.variant=cortex-a76
 
 # Display
