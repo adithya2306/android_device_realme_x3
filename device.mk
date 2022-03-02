@@ -158,13 +158,3 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay \
     WifiOverlay
-
-# WiFi Display
-PRODUCT_PACKAGES += \
-    libavservices_minijail \
-    libdisplayconfig.qti \
-    libdisplayconfig.system.qti \
-    libnl \
-    libqdMetaData \
-    libqdMetaData.system \
-    vendor.display.config@2.0
