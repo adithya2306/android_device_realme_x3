@@ -130,6 +130,9 @@ on property:vendor.post_boot.parsed=1
     # Allow GPU to nap
     write /sys/class/kgsl/kgsl-3d0/force_no_nap 0
 
+on property:init.svc.android.thermal-hal=running
+    stop android.thermal-hal
+
 on property:init.svc.cnss_diag=running
     stop cnss_diag
 
