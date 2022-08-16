@@ -130,6 +130,10 @@ on property:vendor.post_boot.parsed=1
     # Allow GPU to nap
     write /sys/class/kgsl/kgsl-3d0/force_no_nap 0
 
+on property:init.svc.vendor.oplus.vibrator-default=running
+    stop vendor.oplus.vibrator-default
+    restart vendor.qti.vibrator
+
 on property:init.svc.android.thermal-hal=running
     stop android.thermal-hal
 
@@ -141,6 +145,9 @@ on property:init.svc.vendor.ipacm-diag=running
 
 on property:init.svc.face_hal=restarting
     stop face_hal
+
+on property:init.svc.vl53l1_daemon_main=restarting
+    stop vl53l1_daemon_main
 
 on property:vendor.usb.product_string=*
     write /config/usb_gadget/g1/strings/0x409/product ${ro.product.marketname}
