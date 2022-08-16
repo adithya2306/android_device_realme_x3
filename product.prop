@@ -1,3 +1,7 @@
+# ADB
+ro.adb.secure=0
+persist.sys.usb.config=adb
+
 # APEX
 ro.apex.updatable=false
 
