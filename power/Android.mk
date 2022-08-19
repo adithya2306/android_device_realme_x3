@@ -8,7 +8,7 @@ LOCAL_SHARED_LIBRARIES := \
     libdl \
     libbase \
     libutils \
-    android.hardware.power-V1-ndk \
+    android.hardware.power-V1-ndk.vendor_overlay \
     libbinder_ndk
 
 LOCAL_HEADER_LIBRARIES := \
@@ -51,3 +51,12 @@ LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/init
 LOCAL_SRC_FILES := android.hardware.power-service.rc
 include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.hardware.power-V1-ndk.vendor_overlay
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/lib64
+LOCAL_WHOLE_STATIC_LIBRARIES := android.hardware.power-V1-ndk
+LOCAL_SHARED_LIBRARIES := libbinder_ndk
+LOCAL_MULTILIB := 64
+include $(BUILD_SHARED_LIBRARY)
