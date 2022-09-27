@@ -4,7 +4,6 @@ ro.config.media_vol_steps=25
 
 # Bluetooth
 persist.vendor.bt.a2dp.aac_whitelist=false
-ro.bluetooth.library_name=libbluetooth_qti.so
 vendor.bluetooth.soc=cherokee
 
 # CABC
@@ -29,9 +28,6 @@ persist.sys.fuse.passthrough.enable=true
 
 # GMS
 ro.com.google.clientidbase=android-oppo
-ro.com.google.clientidbase.ms=android-oppo
-ro.com.google.clientidbase.tx=android-oppo
-ro.com.google.clientidbase.vs=android-oppo
 
 # Media
 media.stagefright.thumbnail.prefer_hw_codecs=true
@@ -45,14 +41,8 @@ ro.support_one_handed_mode=true
 # Netflix
 ro.netflix.bsp_rev=Q855-16947-1
 
-# Permissions
-ro.control_privapp_permissions=log
-
 # QTI VA
 ro.vendor.qti.va_aosp.support=1
-
-# Quick Tap
-persist.acryl.columbus.model=tap7cls_crosshatch.tflite
 
 # Sensors
 persist.vendor.sensors.enable.mag_filter=true

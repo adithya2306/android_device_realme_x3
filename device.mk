@@ -12,17 +12,9 @@ $(call inherit-product, vendor/realme/x3/x3-vendor.mk)
 # Inherit GSI keys
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
-# ANT+
-PRODUCT_PACKAGES += \
-    AntHalService-Soong
-
 # APN
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
-
-# Bluetooth
-PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/qcom/opensource/commonsys-intf/bluetooth/overlay/generic
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -63,12 +55,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/vendor_overlay/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
 
-# HIDL
-PRODUCT_PACKAGES += \
-    android.hidl.base@1.0 \
-    libhidltransport \
-    libhwbinder
-
 # Init
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.device.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/init.device.rc \
@@ -87,11 +73,10 @@ PRODUCT_COPY_FILES += \
 
 # NFC
 PRODUCT_PACKAGES += \
-    com.android.nfc_extras \
-    com.gsma.services.nfc \
     NfcNci \
     SecureElement \
-    Tag
+    Tag \
+    com.android.nfc_extras
 
 # Overlays
 PRODUCT_PACKAGE_OVERLAYS += \
@@ -105,10 +90,7 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Partitions
 PRODUCT_BUILD_SUPER_PARTITION := false
-PRODUCT_TARGET_VNDK_VERSION := 30
-PRODUCT_EXTRA_VNDK_VERSIONS := 30
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
-PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
 # Parts
 PRODUCT_PACKAGES += \
@@ -153,6 +135,10 @@ PRODUCT_BOOT_JARS += \
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic.x3
+
+# VNDK
+PRODUCT_TARGET_VNDK_VERSION := 30
+PRODUCT_EXTRA_VNDK_VERSIONS := 30
 
 # Vendor overlay
 PRODUCT_COPY_FILES += \
