@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2021 Qualcomm Technologies, Inc.
-
-     Licensed under the Apache License, Version 2.0 (the "License"); you
-     may not use this file except in compliance with the License.  You may
-     obtain a copy of the License at
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
-     implied.  See the License for the specific language governing
-     permissions and limitations under the License.
+<!--
+/*
+ * Copyright (c) 2013-2016,2020 Qualcomm Technologies, Inc.
+ * All Rights Reserved.
+ * Confidential and Proprietary - Qualcomm Technologies, Inc.
+*/
 -->
+<!-- use empty string to specify no proxy or port -->
+<!-- If you edit this version, also edit the version in the partner-supplied
+    apns-conf.xml configuration file -->
 <apns version="8">
   <apn carrier="Test Network"
         mcc="001"
@@ -1140,6 +1136,8 @@
       mmsproxy="62.201.129.226"
       mmsport="8080"
       type="default,supl,mms"
+      protocol="IPV6"
+      roaming_protocol="IPV4V6"
   />
   <apn carrier="Bouygues IMS"
       mcc="208"
@@ -2463,6 +2461,20 @@
       mmsport="80"
       type="mms"
   />
+  <apn carrier="HOS MMS"
+      carrier_id="2394"
+      mcc="230"
+      mnc="01"
+      apn="hos"
+      user="mms"
+      password="mms"
+      mmsc="http://mms"
+      mmsproxy="10.0.0.10"
+      mmsport="80"
+      authtype="1"
+      type="mms"
+      bearer_bitmask="18"
+  />
   <apn carrier="O2 internet"
       mcc="230"
       mnc="02"
@@ -3069,14 +3081,6 @@
       password="plus"
       mvno_type="spn"
       mvno_match_data="Lycamobile"
-  />
-  <apn carrier="EE IMS"
-      mcc="234"
-      mnc="30"
-      apn="ims"
-      type="ims"
-      protocol="IPV4V6"
-      roaming_protocol="IPV4V6"
   />
   <apn carrier="Virgin Media Mobile Internet"
       mcc="234"
@@ -3685,7 +3689,8 @@
       mmsc="http://mms.tre.se"
       mmsproxy="mmsproxy.tre.se"
       mmsport="8799"
-      type="default,supl,mms"
+      type="default,mms"
+      bearer_bitmask="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|19|20"
   />
   <apn carrier="Telenor SE"
       mcc="240"
@@ -6164,6 +6169,19 @@
       mmsport="80"
       type="default,supl,mms"
   />
+  <apn carrier="Rogers"
+      mcc="302"
+      mnc="720"
+      apn="mobile.apn"
+      type="default,mms,supl"
+      protocol="IPV6"
+      roaming_protocol="IPV6"
+      mmsc="http://mms.gprs.rogers.com"
+      mmsproxy="mmsproxy.rogers.com"
+      mmsport="80"
+      mvno_type="gid"
+      mvno_match_data="A4"
+  />
   <apn carrier="Rogers Tethering"
       mcc="302"
       mnc="720"
@@ -6173,6 +6191,16 @@
       mvno_type="spn"
       protocol="IPV4V6"
       roaming_protocol="IP"
+  />
+  <apn carrier="Rogers Tethering"
+      mcc="302"
+      mnc="720"
+      apn="data.apn"
+      type="dun"
+      mvno_type="gid"
+      mvno_match_data="A4"
+      protocol="IPV6"
+      roaming_protocol="IPV6"
   />
   <apn carrier="Rogers Internet"
       mcc="302"
@@ -8090,21 +8118,6 @@
       mtu="1440"
       user_editable="0"
       bearer_bitmask="18"
-  />
-  <apn
-      carrier="Google Fi"
-      carrier_id = "1989"
-      mcc="310"
-      mnc="260"
-      apn="h2g2"
-      user="none"
-      server="*"
-      password="none"
-      mmsc="http://m.fi.goog/mms/wapenc"
-      protocol="IPV6"
-      roaming_protocol="IP"
-      mvno_match_data="31026097"
-      mvno_type="IMSI"
   />
   <apn carrier="MetroPCS"
       mcc="310"
@@ -25145,6 +25158,53 @@
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
       bearer_bitmask="6|7|8|12"
+  />
+  <apn carrier="APN_NAME_CBNET"
+      apn="cbnet"
+      mcc="460"
+      mnc="15"
+      type="default,supl"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+  />
+  <apn carrier="China Broadcast Network (IMS)"
+      apn="ims"
+      mcc="460"
+      mnc="15"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+  />
+  <apn carrier="APN_NAME_CUNET"
+      apn="3gnet"
+      mcc="460"
+      mnc="30"
+      port="80"
+      type="default,supl"
+      user_editable="0"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+  />
+  <apn carrier="APN_NAME_CUMMS"
+      apn="3gwap"
+      mcc="460"
+      mnc="30"
+      mmsproxy="10.0.0.172"
+      mmsport="80"
+      mmsc="http://mmsc.myuni.com.cn"
+      type="mms"
+      user_editable="0"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+  />
+  <apn carrier="China Union (IMS)"
+      mcc="460"
+      mnc="30"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      user_editable="0"
   />
 
   <apn carrier="遠傳電信(Far EasTone) (MMS)"
