@@ -48,8 +48,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.x3 \
-    vendor.oplus.hardware.biometrics.fingerprint@2.1
+    android.hardware.biometrics.fingerprint@2.3-service.x3
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.fingerprint.xml
@@ -117,8 +116,7 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH) \
-    hardware/oplus
+    $(LOCAL_PATH)
 
 # Telephony
 PRODUCT_PACKAGES += \
