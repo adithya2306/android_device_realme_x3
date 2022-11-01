@@ -23,7 +23,4 @@
     <dimen name="status_bar_padding_start">5dp</dimen>
     <dimen name="status_bar_padding_end">4dp</dimen>
 
-    <!-- Margin on the left side of the carrier text on Keyguard -->
-    <dimen name="keyguard_carrier_text_margin">264px</dimen>
-
 </resources>
