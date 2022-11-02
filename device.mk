@@ -4,35 +4,11 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
-
 # Inherit proprietary blobs
 $(call inherit-product, vendor/realme/x3/x3-vendor.mk)
 
 # Inherit GSI keys
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
-
-# APN
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
-
-# Camera
-PRODUCT_PACKAGES += \
-    Camera2
-
-# Charger
-PRODUCT_PACKAGES += \
-    charger_res_images
-
-# Dex/ART optimization
-PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
-PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
-PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
-USE_DEX2OAT_DEBUG := false
-DONT_DEXPREOPT_PREBUILTS := true
-# Enable whole-program R8 Java optimizations for SystemUI and system_server
-SYSTEM_OPTIMIZE_JAVA := true
-SYSTEMUI_OPTIMIZE_JAVA := true
 
 # Display
 PRODUCT_AAPT_CONFIG := normal
@@ -64,10 +40,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.safailnet.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/init.safailnet.rc \
     $(LOCAL_PATH)/rootdir/bin/init.set_baseband.sh:$(TARGET_COPY_OUT_PRODUCT)/bin/init.set_baseband.sh
 
-# Kernel
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/kernel:kernel
-
 # Keylayout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/gpio-keys.kl \
@@ -86,7 +58,9 @@ PRODUCT_PACKAGE_OVERLAYS += \
 
 PRODUCT_PACKAGES += \
     NoCutoutOverlay \
-    NotchBarKiller
+    NotchBarKiller \
+    TetheringConfigOverlay \
+    WifiOverlay
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
@@ -101,15 +75,26 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/parts/init/realmeparts.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/realmeparts.rc
 
+# Platform
+TARGET_BOARD_PLATFORM := msmnile
+
 # Power
+TARGET_PROVIDES_POWERHAL := true
 PRODUCT_PACKAGES += \
     android.hardware.power-service.x3
 
-# RCS
-PRODUCT_PACKAGES += \
-    com.android.ims.rcsmanager \
-    PresencePolling \
-    RcsService
+# QC common
+TARGET_COMMON_QTI_COMPONENTS := \
+    audio \
+    av \
+    bt \
+    display \
+    gps \
+    media \
+    perf \
+    telephony \
+    wfd \
+    wlan
 
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 29
@@ -117,21 +102,6 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
-
-# Telephony
-PRODUCT_PACKAGES += \
-    extphonelib \
-    extphonelib.xml \
-    ims-ext-common \
-    ims_ext_common.xml \
-    qti-telephony-hidl-wrapper \
-    qti_telephony_hidl_wrapper.xml \
-    qti-telephony-utils \
-    qti_telephony_utils.xml \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
 
 # USB
 PRODUCT_PACKAGES += \
@@ -144,8 +114,3 @@ PRODUCT_EXTRA_VNDK_VERSIONS := 30
 # Vendor overlay
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/vendor_overlay/,$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION))
-
-# WiFi
-PRODUCT_PACKAGES += \
-    TetheringConfigOverlay \
-    WifiOverlay
