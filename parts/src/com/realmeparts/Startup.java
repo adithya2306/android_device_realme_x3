@@ -63,6 +63,7 @@ public class Startup extends BroadcastReceiver {
         }
         Utils.startService(context, FPSTileService.class);
         Utils.startService(context, ChargingCoolDownService.class);
+        Utils.startService(context, DT2WService.class);
     }
 
     private boolean hasRestoredTunable(Context context) {

@@ -121,6 +121,10 @@
                  android:exported="false">
         </service>
 
+        <service android:name="com.realmeparts.DT2WService"
+                 android:exported="false">
+        </service>
+
         <service
             android:name=".FPSTileService"
             android:icon="@drawable/fps_info_icon"
