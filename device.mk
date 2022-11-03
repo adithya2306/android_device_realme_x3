@@ -78,11 +78,6 @@ PRODUCT_COPY_FILES += \
 # Platform
 TARGET_BOARD_PLATFORM := msmnile
 
-# Power
-TARGET_PROVIDES_POWERHAL := true
-PRODUCT_PACKAGES += \
-    android.hardware.power-service.x3
-
 # QC common
 TARGET_COMMON_QTI_COMPONENTS := \
     audio \
