@@ -14,6 +14,10 @@ persist.sys.fuse.passthrough.enable=true
 # Netflix
 ro.netflix.bsp_rev=Q855-16947-1
 
+# ReloadedOS
+ro.reloaded.device_maintainer=Adithya (ghostrider_reborn)
+ro.reloaded.device_maintainer_url=https://t.me/ghostrider_reborn
+
 # Sensors
 persist.vendor.sensors.enable.mag_filter=true
 
